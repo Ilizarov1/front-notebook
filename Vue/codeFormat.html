@@ -1,0 +1,22 @@
+<div id="app">
+	<div><a v-model:[href]="url">这是一个链接</a></div>
+
+	<div><a v-on:[things]="doSomething">事件</a></div>
+</div>
+
+<script>
+	var vm = new Vue({
+		el: '#app',
+		data: {
+			href: 'href',
+			things: 'mouseover',
+			url: 'baidu.com',
+			contents: 'doSomething'
+		},
+		methods: {
+			doSomething: function () {
+				alert('已被触发！')
+			}
+		}
+	})
+</script>
