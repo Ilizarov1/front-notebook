@@ -12,6 +12,7 @@ function deepCopy(obj) {
 		result = {}
 	}
 	for (let key of Object.keys(obj)) {
+		// Object.keys不会迭代到原型链上的属性
 		result[key] = deepCopy(obj[key])
 	}
 	return result
