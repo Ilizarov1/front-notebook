@@ -1,6 +1,7 @@
 function myPromiseAll(promises) {
   return new Promise((resolve, reject) => {
     const _promises = Array.from(promises);
+    // 通过一个数组管理
     const ret = [];
     let cnt = 0;
 
@@ -9,6 +10,7 @@ function myPromiseAll(promises) {
       Promise.resolve(promise)
         .then((res) => {
           ret.push(res);
+          // 收集到全部决议后promise后，对主promise进行决议
           if (++cnt === _promises.length) resolve(ret);
         })
         // 返回错误
